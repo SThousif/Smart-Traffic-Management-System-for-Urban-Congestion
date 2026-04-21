@@ -1,0 +1,34 @@
+{% extends "admin.html" %} {% block content %}
+<div class="container-fluid py-5">
+  <div class="container">
+    <h1 class="display-4 text-uppercase text-center mb-5">Prediction Page</h1>
+    <center>
+      <div class="col-lg-10">
+        <div class="contact-form bg-light mb-4" style="padding: 30px">
+          <form
+            action="/prediction"
+            method="post"
+            class="contact-form"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <input
+                type="file"
+                id="contact_name"
+                name="upload"
+                class="form-control"
+                placeholder="upload"
+                required=""
+              />
+            </div>
+            <button class="btn btn-primary py-2 px-4" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </center>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "adminhome.html" %} {% block content %}
+<div class="container-fluid page-header">
+  <h4 class="display-5 text-uppercase text-white mb-3">
+    Adding parking Details
+  </h4>
+  <div class="d-inline-flex text-white">
+    <div class="row">
+      <form
+        action="{{url_for('addparking')}}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="col-15 form-group">
+          <input
+            type="text"
+            name="parkingslot"
+            class="form-control p-4"
+            placeholder="Parking Slot Id"
+            required="required"
+          />
+        </div>
+        <div class="col-15 form-group">
+          <input
+            type="text"
+            name="Cost"
+            class="form-control p-4"
+            placeholder="Cost / Hour"
+            required="required"
+          />
+        </div>
+
+        <div class="col-15 form-group">
+          <input
+            type="text"
+            name="address"
+            class="form-control p-4"
+            placeholder="Address"
+            required="required"
+          />
+        </div>
+        <div class="col-15 form-group">
+          <input
+            type="file"
+            name="nameofimage"
+            class="form-control p-4"
+            required="required"
+          />
+        </div>
+
+        <center>
+          <div>
+            <button class="btn btn-primary py-2 px-4" type="submit">Add</button>
+          </div>
+        </center>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

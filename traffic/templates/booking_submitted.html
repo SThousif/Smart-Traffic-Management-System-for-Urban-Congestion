@@ -1,0 +1,30 @@
+{% extends "customerhome.html" %}
+{% block content %}
+<div class="container-fluid py-5">
+  <div class="container pt-2 pb-4">
+    <h2 class="mb-4">Booking Submitted</h2>
+    <p>Your booking request has been submitted. Please wait for the admin to accept or reject it.</p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          {% for c in cols %}
+          <th>{{c}}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for id,slotid,hourcost,totalhours,totalamount,status in rows %}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{slotid}}</td>
+          <td>{{hourcost}}</td>
+          <td>{{totalhours}}</td>
+          <td>{{totalamount}}</td>
+          <td>{{status}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

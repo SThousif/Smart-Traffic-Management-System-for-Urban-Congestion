@@ -1,0 +1,42 @@
+{% extends "adminhome.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <h4 class="display-5 text-uppercase text-white mb-3">parking slots</h4>
+
+        <div class="row">
+            <table class="table table-striped table-hover" style="border: 4px solid white;width:100%;overflow:scroll">
+
+                {% for i in cols %}
+                <th style="color:green;border: 3px solid white;text-align:center;">{{i}}</th>
+                {% endfor %}
+                <th style="color:green;border: 3px solid white;text-align:center;">Action</th>
+                </tr>
+
+                {% for id,slotid,hourcost,nameoncard,totalhours,totalamount,status,useremail in rows %}
+                <tr>
+
+
+                    <td style="color: navy;text-align:center;">{{id}}</td>
+                    <td style="color: navy;text-align:center;">{{slotid}}</td>
+                    <td style="color: navy;text-align:center;">{{hourcost}}</td>
+                    <td style="color: navy;text-align:center;">{{nameoncard}}</td>
+                    <td style="color: navy;text-align:center;">{{totalhours}}</td>
+                    <td style="color: navy;text-align:center;">{{totalamount}}</td>
+                    <td style="color: navy;text-align:center;">{{status}}</td>
+                    <td style="color: navy;text-align:center;">{{useremail}}</td>
+                    <td style="color: navy;text-align:center;">
+                        <a href="{{ url_for('acceptrequest',x=id) }}" style="color:green;">accept</a>/
+                        <a href="{{ url_for('rejectrequest',x=id) }}" style="color:red;">reject</a>
+                        / <a href="{{ url_for('unlock_slot',slotid=slotid) }}" style="color:orange;">unlock slot</a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+            </table>
+        </div>
+
+    </div>
+    
+{% endblock %}
+

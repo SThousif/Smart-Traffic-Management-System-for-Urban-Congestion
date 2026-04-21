@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Data files
+*.csv
+*.db
+*.sqlite
+
+# Model and large files
+*.pt
+*.h5
+yolov5s.pt
+yolov5su.pt
+runs/
+processed_videos/
+Video/
+uploads/
+
+# IDEs and OS
+.vscode/
+*.suo
+*.user
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Secrets
+*.env
+
+# Ignore compiled templates and static builds
+static/*
+
+# Allow these specific files if needed
+!README.md
+!requirements.txt

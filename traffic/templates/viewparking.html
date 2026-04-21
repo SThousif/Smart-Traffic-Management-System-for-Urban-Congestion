@@ -1,0 +1,38 @@
+{% extends "customerhome.html" %}
+{% block content %}
+<div class="container-fluid py-5">
+    <div class="container pt-2 pb-4">
+        <div class="row">
+            {% for id,parkingslot,cost,address,image,status in rows %}
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="/static/projectimages/{{image}}" alt="">
+                        <h4 class="text-uppercase mb-4">Parking Slot : {{parkingslot}}</h4>
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="px-2">
+                                    <i class="fa fa-car text-primary mr-1"></i>
+                                    <span>{{status}}</span>
+                                </div>        
+                                <div class="px-2">
+                                    <i class="fa fa-road text-primary mr-1"></i>
+                                    <span>{{address}}</span>
+                                </div>
+                            </div>
+                            <a class="btn btn-primary px-3" >{{cost}}/Day</a>
+                            {% if status == 'unlocked' %}
+                                <p><a href="{{ url_for('reserveslot',c=parkingslot)}}">Reserve Slot</a></p>
+                            {% else %}
+                                <p>{{status}}</p>
+                            {% endif %}
+                </div>
+            </div>
+            {% endfor %} 
+            </div>
+                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    
